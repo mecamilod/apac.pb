@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APAC Ambulatorial</title>
+    <style>
+        body {
+            font-family: serif;
+            margin: 20px;
+            color: #333;
+        }
+
+        #apac-container {
+            max-width: 800px;
+            margin: auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-weight: bold;
+            background-color: #f0f0f0;
+            padding: 5px;
+            margin: -10px -10px 10px -10px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group label {
+            width: 150px;
+            flex-shrink: 0;
+        }
+
+        .form-group input, .form-group textarea {
+            flex-grow: 1;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        
+        /* Estilos para impressão */
+        @media print {
+            body {
+                margin: 0;
+            }
+            .buttons, .no-print {
+                display: none;
+            }
+            #apac-container {
+                border: none;
+                box-shadow: none;
+                padding: 0;
+            }
+            input, textarea {
+                border: none !important;
+                background-color: transparent;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="apac-container">
+        <h2>Autorização de Procedimento de Alta Complexidade - APAC</h2>
+
+        <div class="section">
+            <div class="section-title">Dados do Paciente</div>
+            <div class="form-group">
+                <label for="nome_paciente">Nome Completo:</label>
+                <input type="text" id="nome_paciente" name="nome_paciente">
+            </div>
+            <div class="form-group">
+                <label for="cns_paciente">CNS:</label>
+                <input type="text" id="cns_paciente" name="cns_paciente">
+            </div>
+            <div class="form-group">
+                <label for="data_nascimento">Data de Nascimento:</label>
+                <input type="date" id="data_nascimento" name="data_nascimento">
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Dados do Procedimento</div>
+            <div class="form-group">
+                <label for="procedimento">Procedimento Solicitado:</label>
+                <input type="text" id="procedimento" name="procedimento">
+            </div>
+            <div class="form-group">
+                <label for="cid">CID-10:</label>
+                <input type="text" id="cid" name="cid">
+            </div>
+            <div class="form-group">
+                <label for="justificativa">Justificativa Clínica:</label>
+                <textarea id="justificativa" name="justificativa" rows="4"></textarea>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Dados do Solicitante</div>
+            <div class="form-group">
+                <label for="nome_medico">Nome do Médico:</label>
+                <input type="text" id="nome_medico" name="nome_medico">
+            </div>
+            <div class="form-group">
+                <label for="crm_medico">CRM:</label>
+                <input type="text" id="crm_medico" name="crm_medico">
+            </div>
+            <div class="form-group">
+                <label for="data_solicitacao">Data da Solicitação:</label>
+                <input type="date" id="data_solicitacao" name="data_solicitacao">
+            </div>
+        </div>
+
+        <div class="buttons no-print">
+            <button onclick="window.print()">Imprimir APAC</button>
+        </div>
+    </div>
+
+</body>
+</html>
